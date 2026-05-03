@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Invitación 18 Años | Manuel - Elegancia Atemporal</title>
-    <!-- Fuentes Ultra Elegantes: Playfair Display + Montserrat refinado -->
+    <title>Invitación 18 Años | Manuel - Elegancia Serena</title>
+    <!-- Fuentes elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -15,7 +15,7 @@
 
         body {
             min-height: 100vh;
-            background: #0e1a26;  /* fondo base profundo */
+            background: linear-gradient(145deg, #0b1622 0%, #101e2c 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -25,22 +25,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Fondo con textura sutil de papel antiguo + ondas azuladas */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.08"><path fill="none" d="M0 0h800v800H0z"/><path fill="%23aaccff" d="M200 300 L250 280 L300 310 L350 290 L400 320 L450 295 L500 315 L550 285 L600 310 L650 290 L700 320 L750 300 L780 330 L790 310 L800 340" stroke="%2389b9e8" stroke-width="1.2" fill="none"/><circle cx="400" cy="500" r="40" stroke="%2372a6d9" stroke-width="0.8" fill="none"/><circle cx="550" cy="180" r="25" stroke="%2389b9e8" stroke-width="0.6" fill="none"/></svg>');
-            background-repeat: repeat;
-            background-size: 280px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Fondo de partículas dinámicas (azul tenue) */
+        /* Fondo de partículas dinámicas (azul profundo y plateado) */
         #canvas-bg {
             position: fixed;
             top: 0;
@@ -52,74 +37,71 @@
             display: block;
         }
 
-        /* Tarjeta principal simulando "hoja membretada" elegante con sombra y relieve */
+        /* Tarjeta principal: Fondo similar al del body (tonalidad azul grisácea texturizada) */
         .invitation-card {
             position: relative;
             z-index: 15;
             max-width: 820px;
             width: 100%;
-            background: #FFFEF9;
-            background-image: radial-gradient(circle at 10% 20%, rgba(210, 230, 255, 0.2) 1%, transparent 1.5%);
-            background-size: 28px 28px;
-            border-radius: 32px;
-            box-shadow: 0 40px 65px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(140, 180, 220, 0.5), 0 0 0 8px rgba(30, 55, 80, 0.25);
+            background: radial-gradient(circle at 20% 30%, #14273b, #0a1a2b);
+            background-image: repeating-linear-gradient(45deg, rgba(60, 110, 150, 0.08) 0px, rgba(60, 110, 150, 0.08) 1px, transparent 1px, transparent 12px);
+            border-radius: 42px;
+            box-shadow: 0 40px 65px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(100, 150, 200, 0.35), 0 0 0 6px rgba(20, 45, 70, 0.5);
             overflow: hidden;
             transition: transform 0.4s ease, box-shadow 0.5s ease;
             backdrop-filter: blur(0px);
         }
 
         .invitation-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 48px 80px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(100, 160, 210, 0.7), 0 0 0 12px rgba(25, 55, 85, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 48px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(130, 180, 230, 0.5), 0 0 0 10px rgba(25, 55, 85, 0.4);
         }
 
-        /* Decoraciones doradas + azul rey */
+        /* Decoraciones metálicas / azuladas */
         .card-header-decoration {
-            height: 8px;
-            background: linear-gradient(90deg, #b48b3a, #dbb45c, #8b6c32, #dbb45c, #b48b3a);
+            height: 6px;
+            background: linear-gradient(90deg, #567d9e, #8bb3d0, #3e6688, #8bb3d0, #567d9e);
             width: 100%;
         }
 
         .card-content {
-            padding: 50px 48px 55px;
+            padding: 48px 44px 52px;
             text-align: center;
             position: relative;
         }
 
-        /* Sello o escudo elegante (detalle) */
+        /* Sutil marca de agua decorativa */
         .card-content::before {
-            content: "✧";
-            font-size: 2.5rem;
-            color: #c9ac6c;
+            content: "❦";
+            font-size: 2rem;
+            color: rgba(110, 160, 200, 0.2);
             position: absolute;
             top: 20px;
-            left: 30px;
-            opacity: 0.5;
+            left: 28px;
             font-weight: 300;
-            transform: rotate(-15deg);
+            transform: rotate(-10deg);
         }
         .card-content::after {
-            content: "✧";
-            font-size: 2.5rem;
-            color: #c9ac6c;
+            content: "❦";
+            font-size: 2rem;
+            color: rgba(110, 160, 200, 0.2);
             position: absolute;
             bottom: 20px;
-            right: 30px;
-            opacity: 0.5;
-            transform: rotate(15deg);
+            right: 28px;
+            transform: rotate(10deg);
         }
 
         .invite-subtitle {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             font-weight: 500;
             letter-spacing: 4px;
-            color: #5f7f9e;
+            color: #bfd9f0;
             text-transform: uppercase;
             position: relative;
             display: inline-block;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #4f6e8a, #2c4b6e);
+            background: linear-gradient(135deg, #e4f0ff, #b3cef0);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -129,39 +111,39 @@
         .invite-subtitle::after {
             content: "✦";
             margin: 0 12px;
-            font-size: 1.3rem;
-            color: #b88b42;
+            font-size: 1.2rem;
+            color: #c9ab6e;
             animation: gentleSparkle 2.2s infinite;
         }
 
         @keyframes gentleSparkle {
             0% { opacity: 0.5; transform: scale(0.9); text-shadow: 0 0 0px #e7c27d; }
-            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px #e7c27d; }
+            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px #dfbc7a; }
         }
 
         .big-age {
             font-size: 8rem;
             font-weight: 800;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(145deg, #c9a457, #ecd696, #b68b3c);
+            background: linear-gradient(145deg, #ecd6a5, #f5e7c1, #cfb27a);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 15px rgba(180, 140, 70, 0.3);
-            margin: 5px 0;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            margin: 8px 0;
             line-height: 1;
             letter-spacing: 8px;
         }
 
         .name-manuel {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(125deg, #2a4b6e, #537a9f, #2c5a82);
+            background: linear-gradient(125deg, #d9ecff, #afcde9, #7fa5c7);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-top: -10px;
+            margin-top: -8px;
             margin-bottom: 22px;
             letter-spacing: 6px;
             text-transform: uppercase;
@@ -171,43 +153,45 @@
 
         .name-manuel::after {
             content: "⚜️";
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             position: absolute;
-            right: -52px;
-            top: 10px;
-            color: #c9aa63;
-            animation: floatFleur 3s infinite;
+            right: -50px;
+            top: 8px;
+            color: #cfb27a;
+            opacity: 0.8;
+            animation: subtleFloat 3s infinite;
         }
 
-        @keyframes floatFleur {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            100% { transform: translateY(-4px) rotate(8deg); opacity: 1; }
+        @keyframes subtleFloat {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-3px) rotate(6deg); }
         }
 
         .quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 500;
-            color: #3c5b7c;
-            background: rgba(225, 240, 252, 0.65);
-            padding: 14px 26px;
-            border-radius: 70px;
-            margin: 20px 0 25px;
+            color: #cde3f5;
+            background: rgba(25, 55, 85, 0.55);
+            padding: 14px 20px;
+            border-radius: 60px;
+            margin: 20px 0 28px;
             border-left: 3px solid #d3af6a;
             border-right: 3px solid #d3af6a;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(3px);
             line-height: 1.5;
         }
 
-        /* Detalles del evento con estilo refinado */
+        /* Event details con fondo semi-transparente similar a la tarjeta */
         .event-details {
-            background: #fbfaf7;
+            background: rgba(18, 40, 60, 0.65);
+            backdrop-filter: blur(4px);
             border-radius: 48px;
             padding: 22px 20px;
             margin: 20px 0 25px;
-            box-shadow: 0 8px 20px rgba(50, 70, 90, 0.08);
-            border: 1px solid #e2eaf1;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(100, 150, 200, 0.4);
         }
 
         .info-row {
@@ -222,51 +206,53 @@
 
         .info-icon {
             font-size: 1.6rem;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
-            color: #be8f48;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+            color: #deb887;
         }
 
         .info-text {
             font-weight: 500;
-            color: #254e6e;
+            color: #f0f4fa;
             font-family: 'Montserrat', sans-serif;
         }
 
         .highlight {
-            background: #e3effa;
-            color: #22638b;
-            font-weight: 700;
-            padding: 5px 16px;
+            background: #1f4468;
+            color: #f4e5c7;
+            font-weight: 600;
+            padding: 4px 16px;
             border-radius: 50px;
             display: inline-block;
-            font-family: 'Montserrat', sans-serif;
         }
 
         .direction-block {
-            background: #eef4fc;
+            background: rgba(30, 65, 95, 0.7);
             border-radius: 28px;
             padding: 10px 18px;
-            margin-top: 5px;
-            font-weight: 600;
+            margin-top: 8px;
+            font-weight: 500;
             word-break: break-word;
+            color: #e9f2fa;
+            border: 1px solid #5683a8;
         }
 
+        /* Countdown elegante */
         .countdown-section {
             margin: 25px 0 20px;
-            background: linear-gradient(125deg, #152f42, #0a2337);
+            background: #0a1f2fe6;
             border-radius: 60px;
-            padding: 20px 18px;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,210,0.1);
+            padding: 18px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,210,0.08);
         }
 
         .countdown-title {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            letter-spacing: 2.5px;
+            font-weight: 400;
+            letter-spacing: 2px;
             color: #e7cf9c;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .timer {
@@ -277,21 +263,20 @@
         }
 
         .timer-block {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            background: #071a2ad9;
+            backdrop-filter: blur(4px);
             padding: 8px 12px;
             border-radius: 36px;
             min-width: 80px;
             text-align: center;
-            border: 1px solid #cfb07c;
-            transition: all 0.2s;
+            border: 1px solid #8eb3cf;
         }
 
         .timer-number {
             font-size: 2rem;
             font-weight: 800;
             font-family: 'Playfair Display', monospace;
-            background: linear-gradient(135deg, #fbe5b9, #f2cf92);
+            background: linear-gradient(135deg, #fbe5b9, #efd197);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -301,43 +286,46 @@
         .timer-label {
             font-size: 0.7rem;
             font-weight: 500;
-            color: #dbcaa3;
+            color: #cfdec9;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        /* Solo la referencia de ubicación y texto de no faltas, sin información extra */
         .location-ref {
             margin-top: 20px;
-            background: #f3f6fc;
+            background: rgba(25, 65, 95, 0.6);
             border-radius: 36px;
-            padding: 14px 15px;
-            border: 1px solid #c7deef;
+            padding: 12px 16px;
+            border: 1px solid #698eae;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
-            color: #1b537a;
+            color: #e8f0f9;
+            text-align: center;
+            font-weight: 400;
         }
 
         .no-faltes {
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
-            color: #9e773c;
-            margin-top: 30px;
+            color: #e9c98a;
+            margin-top: 28px;
             letter-spacing: 3px;
             display: inline-block;
-            border-top: 2px solid #dcb971;
+            border-top: 2px solid #b49254;
             padding-top: 20px;
-            animation: textGlow 2s infinite;
+            animation: softBreathing 2.2s infinite;
         }
 
-        @keyframes textGlow {
-            0% { text-shadow: 0 0 0px #efcd8a; opacity: 0.9;}
-            100% { text-shadow: 0 0 8px #e1b157; opacity: 1;}
+        @keyframes softBreathing {
+            0% { text-shadow: 0 0 0px #e9c98a; opacity: 0.9; }
+            100% { text-shadow: 0 0 6px #f0d894; opacity: 1; }
         }
 
         .card-footer-decoration {
             height: 5px;
-            background: linear-gradient(90deg, #b48b3a, #e7c180, #b48b3a);
+            background: linear-gradient(90deg, #567d9e, #8bb3d0, #3e6688);
             width: 100%;
         }
 
@@ -346,7 +334,7 @@
                 padding: 35px 24px 40px;
             }
             .big-age {
-                font-size: 5rem;
+                font-size: 5.2rem;
                 letter-spacing: 4px;
             }
             .name-manuel {
@@ -354,23 +342,20 @@
                 letter-spacing: 3px;
             }
             .invite-subtitle {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
             .timer-block {
                 min-width: 65px;
                 padding: 6px 8px;
             }
             .timer-number {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
             .quote {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
             .no-faltes {
                 font-size: 1.5rem;
-            }
-            .card-content::before, .card-content::after {
-                display: none;
             }
         }
     </style>
@@ -387,7 +372,7 @@
             <div class="name-manuel">MANUEL</div>
 
             <div class="quote">
-                “Cada paso se convierte en luz, cada recuerdo en un latido. Acompáñame a danzar bajo las estrellas.”
+                “En cada instante brilla una nueva historia. Te espero para compartir la alegría de este día.”
             </div>
 
             <div class="event-details">
@@ -397,7 +382,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-icon">⏰</span>
-                    <span class="info-text"><strong>5:00 PM - 11:00 PM</strong> · Celebración desde las 5 de la tarde</span>
+                    <span class="info-text"><strong>5:00 PM - 11:00 PM</strong> · Celebración desde las 5:00 P.M.</span>
                 </div>
                 <div class="info-row">
                     <span class="info-icon">📍</span>
@@ -408,13 +393,13 @@
                     <span class="info-text"><strong>Referencia:</strong> Altura del Paradero 5 de la Av Canto Grande</span>
                 </div>
                 <div class="direction-block">
-                    ✦ Calle principal, ingreso iluminado. Estacionamiento privado disponible ✦
+                    ✦ Av. del Parque #263, San Rafael. Ambiente acogedor ✦
                 </div>
             </div>
 
-            <!-- CUENTA REGRESIVA HASTA EL 9 DE MAYO 2026 - 5PM -->
+            <!-- Cuenta regresiva animada hasta el 9 de mayo 2026 5pm -->
             <div class="countdown-section">
-                <div class="countdown-title">✨ CUENTA REGRESIVA PARA LA MAGIA ✨</div>
+                <div class="countdown-title">✨ COMPARTAMOS LA ESPERA ✨</div>
                 <div class="timer" id="timerContainer">
                     <div class="timer-block">
                         <div class="timer-number" id="days">00</div>
@@ -435,13 +420,13 @@
                 </div>
             </div>
 
+            <!-- Solo se mantiene una línea simple, sin vestimenta ni confirmación -->
             <div class="location-ref">
-                🎩 Código de vestimenta: Etiqueta semiformal · Noche de gala joven <br>
-                🥂 Confirma tu alegría antes del 2 de mayo al +51 987 654 321
+                🎈 Entrada libre · Estacionamiento en las inmediaciones 🎈
             </div>
 
             <div class="no-faltes">
-                ✦ NO FALTES, SERÁ INOLVIDABLE ✦
+                ✦ ¡NO FALTES! ✦
             </div>
         </div>
         <div class="card-footer-decoration"></div>
@@ -449,30 +434,26 @@
 
     <script>
         (function() {
-            // ---------- FONDO DE PARTÍCULAS ELEGANTE AZUL + DORADO ----------
+            // CANVAS DE FONDO - Partículas azuladas/suaves (similar al estilo de la página)
             const canvas = document.getElementById('canvas-bg');
             let ctx = canvas.getContext('2d');
             let width, height;
             let particles = [];
-            const PARTICLE_COUNT = 140;
+            const PARTICLE_COUNT = 135;
 
             function initParticles() {
                 particles = [];
                 for (let i = 0; i < PARTICLE_COUNT; i++) {
-                    const isGold = Math.random() > 0.7;
-                    let color;
-                    if (isGold) {
-                        color = `hsla(${45 + Math.random() * 15}, 75%, 60%, ${Math.random() * 0.5 + 0.2})`;
-                    } else {
-                        color = `hsla(${200 + Math.random() * 40}, 60%, 55%, ${Math.random() * 0.5 + 0.2})`;
-                    }
+                    const hueBase = 200 + Math.random() * 45;      // azules / celestes
+                    const sat = 40 + Math.random() * 45;
+                    const light = 50 + Math.random() * 30;
                     particles.push({
                         x: Math.random() * width,
                         y: Math.random() * height,
-                        radius: Math.random() * 5 + 1.5,
-                        speedX: (Math.random() - 0.5) * 0.3,
-                        speedY: (Math.random() - 0.5) * 0.2 + 0.05,
-                        color: color
+                        radius: Math.random() * 5 + 1.2,
+                        speedX: (Math.random() - 0.5) * 0.28,
+                        speedY: (Math.random() - 0.5) * 0.2 + 0.06,
+                        color: `hsla(${hueBase}, ${sat}%, ${light}%, ${Math.random() * 0.55 + 0.2})`
                     });
                 }
             }
@@ -492,8 +473,8 @@
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                     ctx.fillStyle = p.color;
-                    ctx.shadowBlur = 9;
-                    ctx.shadowColor = "rgba(80, 150, 220, 0.5)";
+                    ctx.shadowBlur = 7;
+                    ctx.shadowColor = "rgba(70, 150, 210, 0.5)";
                     ctx.fill();
                     p.x += p.speedX;
                     p.y += p.speedY;
@@ -503,9 +484,9 @@
                     if (p.y < -20) p.y = height + 15;
                     if (p.y > height + 20) p.y = -20;
                     
-                    if (Math.random() < 0.015) {
-                        const newHue = Math.random() > 0.6 ? 45 + Math.random() * 20 : 200 + Math.random() * 40;
-                        p.color = `hsla(${newHue}, 65%, 60%, ${Math.random() * 0.6 + 0.3})`;
+                    if (Math.random() < 0.02) {
+                        const newHue = 190 + Math.random() * 55;
+                        p.color = `hsla(${newHue}, 60%, 60%, ${Math.random() * 0.5 + 0.3})`;
                     }
                 }
                 requestAnimationFrame(drawParticles);
@@ -515,8 +496,8 @@
             resizeCanvas();
             drawParticles();
 
-            // ---------- CUENTA REGRESIVA: 9 DE MAYO 2026 - 5:00 PM ----------
-            const eventDate = new Date(2026, 4, 9, 17, 0, 0); // Mayo = mes 4
+            // ---------- CUENTA REGRESIVA: 9 MAYO 2026 - 5:00 PM ----------
+            const eventDate = new Date(2026, 4, 9, 17, 0, 0); // mes 4 = Mayo
 
             function updateCountdown() {
                 const now = new Date();
@@ -527,8 +508,8 @@
                     document.getElementById('hours').innerText = '00';
                     document.getElementById('minutes').innerText = '00';
                     document.getElementById('seconds').innerText = '00';
-                    const titleEl = document.querySelector('.countdown-title');
-                    if (titleEl) titleEl.innerHTML = '🎉 ¡HOY ES EL GRAN DÍA! 🎉';
+                    const titleSpan = document.querySelector('.countdown-title');
+                    if (titleSpan) titleSpan.innerHTML = '🎉 ¡HOY ES EL DÍA! 🎉';
                     return;
                 }
                 
@@ -546,63 +527,63 @@
             updateCountdown();
             setInterval(updateCountdown, 1000);
             
-            // Efecto de brillo en números del temporizador
-            const timerSpans = document.querySelectorAll('.timer-number');
-            function sparkleTimer() {
-                timerSpans.forEach(el => {
+            // Efecto de brillo en números del timer
+            const timerNumbers = document.querySelectorAll('.timer-number');
+            function addTimerGlow() {
+                timerNumbers.forEach(el => {
                     setInterval(() => {
-                        if (Math.random() > 0.8) {
-                            el.style.textShadow = '0 0 10px #f5d98f';
-                            setTimeout(() => { el.style.textShadow = 'none'; }, 220);
+                        if (Math.random() > 0.75) {
+                            el.style.textShadow = '0 0 12px #f1daa4';
+                            setTimeout(() => { el.style.textShadow = 'none'; }, 240);
                         }
-                    }, 1100);
+                    }, 1200);
                 });
             }
-            sparkleTimer();
+            addTimerGlow();
 
-            // Movimiento parallax elegante en la tarjeta
+            // Movimiento Parallax suave para la tarjeta
             const card = document.querySelector('.invitation-card');
             if (card) {
                 document.body.addEventListener('mousemove', (e) => {
-                    const xAxis = (window.innerWidth / 2 - e.pageX) / 70;
-                    const yAxis = (window.innerHeight / 2 - e.pageY) / 70;
-                    card.style.transform = `translateY(-6px) rotateX(${yAxis * 0.15}deg) rotateY(${xAxis * 0.15}deg)`;
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 75;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 75;
+                    card.style.transform = `translateY(-4px) rotateX(${yAxis * 0.12}deg) rotateY(${xAxis * 0.12}deg)`;
                 });
                 card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(-6px) rotateX(0deg) rotateY(0deg)';
+                    card.style.transform = 'translateY(-4px) rotateX(0deg) rotateY(0deg)';
                 });
             }
             
-            // Efecto azul/dorado en bordes decorativos
-            let shift = 195;
-            function animateBorderGlow() {
-                const topDeco = document.querySelector('.card-header-decoration');
-                const bottomDeco = document.querySelector('.card-footer-decoration');
-                if (topDeco && bottomDeco) {
-                    shift = (shift + 0.7) % 360;
-                    const glowColor = `hsla(${shift}, 65%, 55%, 0.5)`;
-                    topDeco.style.boxShadow = `0 2px 8px ${glowColor}`;
-                    bottomDeco.style.boxShadow = `0 -2px 8px ${glowColor}`;
+            // Efecto sutil de cambio en decoraciones
+            let hueShift = 205;
+            function animateBorders() {
+                const topSec = document.querySelector('.card-header-decoration');
+                const bottomSec = document.querySelector('.card-footer-decoration');
+                if (topSec && bottomSec) {
+                    hueShift = (hueShift + 0.6) % 360;
+                    const glowColor = `hsla(${hueShift}, 55%, 60%, 0.4)`;
+                    topSec.style.boxShadow = `0 1px 6px ${glowColor}`;
+                    bottomSec.style.boxShadow = `0 -1px 6px ${glowColor}`;
                 }
-                requestAnimationFrame(animateBorderGlow);
+                requestAnimationFrame(animateBorders);
             }
-            animateBorderGlow();
+            animateBorders();
             
-            // pequeños destellos en el fondo cada cierto tiempo para hacer más visual la grabación
+            // Pequeños destellos ocasionales sobre el canvas para dar dinamismo (al grabar pantalla)
             setInterval(() => {
                 if (ctx) {
-                    ctx.shadowBlur = 12;
-                    const glintX = Math.random() * width;
-                    const glintY = Math.random() * height;
+                    const flashX = Math.random() * width;
+                    const flashY = Math.random() * height;
                     ctx.beginPath();
-                    ctx.arc(glintX, glintY, Math.random() * 12 + 3, 0, Math.PI*2);
-                    ctx.fillStyle = `rgba(210, 185, 110, ${Math.random() * 0.5})`;
+                    ctx.arc(flashX, flashY, Math.random() * 10 + 2, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(180, 210, 245, ${Math.random() * 0.45})`;
                     ctx.fill();
-                    setTimeout(() => {}, 50);
+                    setTimeout(() => {}, 30);
                 }
-            }, 2100);
+            }, 2300);
             
-            console.log('🎬 Invitación Manuel: Dirección actualizada, diseño tipo hoja membretada — perfecta para grabar GIF.');
+            // Hacer que el fondo de la tarjeta y sus elementos compartan la misma esencia visual que el body
+            console.log('✨ Invitación con tonos azules uniformes, diseño sobrio y elegante, sin textos extra. Ideal para grabación GIF.');
         })();
     </script>
 </body>
