@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Invitación 18 Años | Manuel - Elegancia Serena</title>
-    <!-- Fuentes elegantes -->
+    <title>Invitación 18 años | Manuel - Metálico & Elegancia</title>
+    <!-- Fuentes refinadas -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -15,7 +15,7 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #0b1622 0%, #101e2c 100%);
+            background: radial-gradient(circle at 30% 10%, #0a0f1a 0%, #03070f 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -25,7 +25,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Fondo de partículas dinámicas (azul profundo y plateado) */
+        /* Canvas con esferas brillantes (azules, doradas, negras metálicas) */
         #canvas-bg {
             position: fixed;
             top: 0;
@@ -37,71 +37,81 @@
             display: block;
         }
 
-        /* Tarjeta principal: Fondo similar al del body (tonalidad azul grisácea texturizada) */
+        /* Tarjeta principal: azul metálico + bordes negros/dorados */
         .invitation-card {
             position: relative;
             z-index: 15;
-            max-width: 820px;
+            max-width: 860px;
             width: 100%;
-            background: radial-gradient(circle at 20% 30%, #14273b, #0a1a2b);
-            background-image: repeating-linear-gradient(45deg, rgba(60, 110, 150, 0.08) 0px, rgba(60, 110, 150, 0.08) 1px, transparent 1px, transparent 12px);
-            border-radius: 42px;
-            box-shadow: 0 40px 65px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(100, 150, 200, 0.35), 0 0 0 6px rgba(20, 45, 70, 0.5);
+            background: linear-gradient(145deg, #0e1a28 0%, #09121e 100%);
+            border-radius: 52px;
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.5), 0 0 0 6px rgba(10, 20, 35, 0.9);
             overflow: hidden;
             transition: transform 0.4s ease, box-shadow 0.5s ease;
-            backdrop-filter: blur(0px);
+            backdrop-filter: blur(1px);
         }
 
         .invitation-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 48px 80px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(130, 180, 230, 0.5), 0 0 0 10px rgba(25, 55, 85, 0.4);
+            box-shadow: 0 45px 85px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(212, 175, 55, 0.7), 0 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Decoraciones metálicas / azuladas */
+        /* Decoraciones doradas / negras */
         .card-header-decoration {
             height: 6px;
-            background: linear-gradient(90deg, #567d9e, #8bb3d0, #3e6688, #8bb3d0, #567d9e);
+            background: linear-gradient(90deg, #000000, #d4af37, #b88b2c, #d4af37, #000000);
+            width: 100%;
+        }
+
+        .card-footer-decoration {
+            height: 6px;
+            background: linear-gradient(90deg, #000000, #d4af37, #b88b2c, #d4af37, #000000);
             width: 100%;
         }
 
         .card-content {
-            padding: 48px 44px 52px;
+            padding: 48px 44px 55px;
             text-align: center;
             position: relative;
         }
 
-        /* Sutil marca de agua decorativa */
+        /* Motivos ornamentales dorados */
         .card-content::before {
             content: "❦";
-            font-size: 2rem;
-            color: rgba(110, 160, 200, 0.2);
+            font-size: 2.3rem;
+            color: rgba(212, 175, 55, 0.35);
             position: absolute;
             top: 20px;
             left: 28px;
             font-weight: 300;
-            transform: rotate(-10deg);
+            animation: rotateSlow 20s infinite linear;
         }
         .card-content::after {
             content: "❦";
-            font-size: 2rem;
-            color: rgba(110, 160, 200, 0.2);
+            font-size: 2.3rem;
+            color: rgba(212, 175, 55, 0.35);
             position: absolute;
             bottom: 20px;
             right: 28px;
-            transform: rotate(10deg);
+            animation: rotateSlow 20s infinite reverse;
+        }
+
+        @keyframes rotateSlow {
+            0% { transform: rotate(0deg); opacity: 0.4; }
+            100% { transform: rotate(360deg); opacity: 0.8; }
         }
 
         .invite-subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 1.45rem;
             font-weight: 500;
-            letter-spacing: 4px;
-            color: #bfd9f0;
+            letter-spacing: 5px;
+            color: #c7b07b;
             text-transform: uppercase;
             position: relative;
             display: inline-block;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #e4f0ff, #b3cef0);
+            background: linear-gradient(135deg, #e4d5a8, #b88b2c);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -112,40 +122,40 @@
             content: "✦";
             margin: 0 12px;
             font-size: 1.2rem;
-            color: #c9ab6e;
-            animation: gentleSparkle 2.2s infinite;
+            color: #d4af37;
+            animation: glowStar 2s infinite alternate;
         }
 
-        @keyframes gentleSparkle {
-            0% { opacity: 0.5; transform: scale(0.9); text-shadow: 0 0 0px #e7c27d; }
-            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px #dfbc7a; }
+        @keyframes glowStar {
+            0% { opacity: 0.6; text-shadow: 0 0 0px #e6c468; transform: scale(0.9);}
+            100% { opacity: 1; text-shadow: 0 0 12px #ffdd99; transform: scale(1.2);}
         }
 
         .big-age {
             font-size: 8rem;
             font-weight: 800;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(145deg, #ecd6a5, #f5e7c1, #cfb27a);
+            background: linear-gradient(145deg, #e7cf94, #ffeaac, #d4af37);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-            margin: 8px 0;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            margin: 5px 0;
             line-height: 1;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
         }
 
         .name-manuel {
             font-size: 3.8rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(125deg, #d9ecff, #afcde9, #7fa5c7);
+            background: linear-gradient(125deg, #c9b27c, #f0e0b0, #b48b3a);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin-top: -8px;
+            margin-top: -10px;
             margin-bottom: 22px;
-            letter-spacing: 6px;
+            letter-spacing: 7px;
             text-transform: uppercase;
             position: relative;
             display: inline-block;
@@ -153,203 +163,138 @@
 
         .name-manuel::after {
             content: "⚜️";
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             position: absolute;
-            right: -50px;
-            top: 8px;
-            color: #cfb27a;
-            opacity: 0.8;
-            animation: subtleFloat 3s infinite;
+            right: -52px;
+            top: 6px;
+            color: #d4af37;
+            filter: drop-shadow(0 0 3px gold);
+            animation: floatGold 3s infinite alternate;
         }
 
-        @keyframes subtleFloat {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-3px) rotate(6deg); }
+        @keyframes floatGold {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(-5px) rotate(8deg); opacity: 1; }
         }
 
+        /* Cita elegante */
         .quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1rem;
             font-weight: 500;
-            color: #cde3f5;
-            background: rgba(25, 55, 85, 0.55);
-            padding: 14px 20px;
+            color: #bfaf82;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            padding: 14px 24px;
             border-radius: 60px;
             margin: 20px 0 28px;
-            border-left: 3px solid #d3af6a;
-            border-right: 3px solid #d3af6a;
-            backdrop-filter: blur(3px);
-            line-height: 1.5;
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
         }
 
-        /* Event details con fondo semi-transparente similar a la tarjeta */
+        /* Detalles del evento: fondo negro metálico con detalles dorados */
         .event-details {
-            background: rgba(18, 40, 60, 0.65);
+            background: rgba(0, 0, 0, 0.65);
             backdrop-filter: blur(4px);
             border-radius: 48px;
-            padding: 22px 20px;
-            margin: 20px 0 25px;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(100, 150, 200, 0.4);
+            padding: 24px 20px;
+            margin: 20px 0 22px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid #d4af37;
         }
 
         .info-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin: 15px 0;
+            margin: 14px 0;
             font-size: 1rem;
         }
 
         .info-icon {
             font-size: 1.6rem;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
-            color: #deb887;
+            filter: drop-shadow(0 0 2px gold);
+            color: #e5c683;
         }
 
         .info-text {
             font-weight: 500;
-            color: #f0f4fa;
+            color: #ece3cc;
             font-family: 'Montserrat', sans-serif;
         }
 
         .highlight {
-            background: #1f4468;
-            color: #f4e5c7;
-            font-weight: 600;
-            padding: 4px 16px;
+            background: #1f1b10;
+            color: #e5c683;
+            font-weight: 700;
+            padding: 5px 16px;
             border-radius: 50px;
             display: inline-block;
+            border: 1px solid #d4af37;
         }
 
         .direction-block {
-            background: rgba(30, 65, 95, 0.7);
-            border-radius: 28px;
-            padding: 10px 18px;
-            margin-top: 8px;
+            background: #0a0a0ccc;
+            border-radius: 48px;
+            padding: 12px 18px;
+            margin-top: 12px;
             font-weight: 500;
             word-break: break-word;
-            color: #e9f2fa;
-            border: 1px solid #5683a8;
+            color: #e5cf9e;
+            border: 1px solid #b48b3a;
+            font-size: 0.92rem;
         }
 
-        /* Countdown elegante */
-        .countdown-section {
-            margin: 25px 0 20px;
-            background: #0a1f2fe6;
-            border-radius: 60px;
-            padding: 18px 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,210,0.08);
-        }
-
-        .countdown-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: #e7cf9c;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .timer-block {
-            background: #071a2ad9;
-            backdrop-filter: blur(4px);
-            padding: 8px 12px;
-            border-radius: 36px;
-            min-width: 80px;
-            text-align: center;
-            border: 1px solid #8eb3cf;
-        }
-
-        .timer-number {
-            font-size: 2rem;
-            font-weight: 800;
-            font-family: 'Playfair Display', monospace;
-            background: linear-gradient(135deg, #fbe5b9, #efd197);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            line-height: 1.2;
-        }
-
-        .timer-label {
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #cfdec9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Solo la referencia de ubicación y texto de no faltas, sin información extra */
-        .location-ref {
+        /* No hay cuenta regresiva, solo datos fijos */
+        .info-adicional {
             margin-top: 20px;
-            background: rgba(25, 65, 95, 0.6);
-            border-radius: 36px;
-            padding: 12px 16px;
-            border: 1px solid #698eae;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 48px;
+            padding: 12px 18px;
+            border: 1px solid #c7a24b;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            color: #e8f0f9;
+            font-size: 0.92rem;
+            color: #e9dbbd;
             text-align: center;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .no-faltes {
-            font-size: 1.9rem;
+            font-size: 2rem;
             font-weight: 700;
             font-family: 'Playfair Display', serif;
-            color: #e9c98a;
-            margin-top: 28px;
-            letter-spacing: 3px;
+            color: #e2bc6c;
+            margin-top: 32px;
+            letter-spacing: 5px;
             display: inline-block;
-            border-top: 2px solid #b49254;
+            border-top: 2px solid #d4af37;
             padding-top: 20px;
-            animation: softBreathing 2.2s infinite;
+            animation: pulseGold 2s infinite;
         }
 
-        @keyframes softBreathing {
-            0% { text-shadow: 0 0 0px #e9c98a; opacity: 0.9; }
-            100% { text-shadow: 0 0 6px #f0d894; opacity: 1; }
+        @keyframes pulseGold {
+            0% { text-shadow: 0 0 0px #d4af37; opacity: 0.9; transform: scale(1);}
+            100% { text-shadow: 0 0 12px #ffda99; opacity: 1; transform: scale(1.01);}
         }
 
-        .card-footer-decoration {
-            height: 5px;
-            background: linear-gradient(90deg, #567d9e, #8bb3d0, #3e6688);
-            width: 100%;
-        }
-
-        @media (max-width: 620px) {
+        @media (max-width: 640px) {
             .card-content {
                 padding: 35px 24px 40px;
             }
             .big-age {
                 font-size: 5.2rem;
-                letter-spacing: 4px;
+                letter-spacing: 5px;
             }
             .name-manuel {
-                font-size: 2.4rem;
-                letter-spacing: 3px;
+                font-size: 2.5rem;
+                letter-spacing: 4px;
             }
             .invite-subtitle {
-                font-size: 1.05rem;
-            }
-            .timer-block {
-                min-width: 65px;
-                padding: 6px 8px;
-            }
-            .timer-number {
-                font-size: 1.6rem;
+                font-size: 1.1rem;
             }
             .quote {
                 font-size: 0.85rem;
@@ -372,7 +317,7 @@
             <div class="name-manuel">MANUEL</div>
 
             <div class="quote">
-                “En cada instante brilla una nueva historia. Te espero para compartir la alegría de este día.”
+                “Una noche de brillo, armonía y elegancia. Acompáñame a crear recuerdos inolvidables.”
             </div>
 
             <div class="event-details">
@@ -382,7 +327,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-icon">⏰</span>
-                    <span class="info-text"><strong>5:00 PM - 11:00 PM</strong> · Celebración desde las 5:00 P.M.</span>
+                    <span class="info-text"><strong>5:00 PM - 11:00 PM</strong></span>
                 </div>
                 <div class="info-row">
                     <span class="info-icon">📍</span>
@@ -393,36 +338,13 @@
                     <span class="info-text"><strong>Referencia:</strong> Altura del Paradero 5 de la Av Canto Grande</span>
                 </div>
                 <div class="direction-block">
-                    ✦ Av. del Parque #263, San Rafael. Ambiente acogedor ✦
+                    ✦ Av. del Parque #263, San Rafael · Acceso principal iluminado ✦
                 </div>
             </div>
 
-            <!-- Cuenta regresiva animada hasta el 9 de mayo 2026 5pm -->
-            <div class="countdown-section">
-                <div class="countdown-title">✨ COMPARTAMOS LA ESPERA ✨</div>
-                <div class="timer" id="timerContainer">
-                    <div class="timer-block">
-                        <div class="timer-number" id="days">00</div>
-                        <div class="timer-label">Días</div>
-                    </div>
-                    <div class="timer-block">
-                        <div class="timer-number" id="hours">00</div>
-                        <div class="timer-label">Horas</div>
-                    </div>
-                    <div class="timer-block">
-                        <div class="timer-number" id="minutes">00</div>
-                        <div class="timer-label">Minutos</div>
-                    </div>
-                    <div class="timer-block">
-                        <div class="timer-number" id="seconds">00</div>
-                        <div class="timer-label">Segundos</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Solo se mantiene una línea simple, sin vestimenta ni confirmación -->
-            <div class="location-ref">
-                🎈 Entrada libre · Estacionamiento en las inmediaciones 🎈
+            <!-- Texto simple sin cuenta regresiva -->
+            <div class="info-adicional">
+                ✨ Entrada libre · Estacionamiento en las inmediaciones · Celebración con música ✨
             </div>
 
             <div class="no-faltes">
@@ -434,26 +356,45 @@
 
     <script>
         (function() {
-            // CANVAS DE FONDO - Partículas azuladas/suaves (similar al estilo de la página)
+            // ESFERAS BRILLANTES (azul metálico, negro con destellos, dorado)
             const canvas = document.getElementById('canvas-bg');
             let ctx = canvas.getContext('2d');
             let width, height;
             let particles = [];
-            const PARTICLE_COUNT = 135;
+            const PARTICLE_COUNT = 180;
 
             function initParticles() {
                 particles = [];
                 for (let i = 0; i < PARTICLE_COUNT; i++) {
-                    const hueBase = 200 + Math.random() * 45;      // azules / celestes
-                    const sat = 40 + Math.random() * 45;
-                    const light = 50 + Math.random() * 30;
+                    // Colores: azules metálicos, dorados, negros/grises con brillo
+                    let colorStyle;
+                    const type = Math.random();
+                    if (type < 0.5) {
+                        // Azul metálico / acero
+                        const hue = 200 + Math.random() * 30;
+                        const sat = 55 + Math.random() * 35;
+                        const lit = 55 + Math.random() * 30;
+                        colorStyle = `hsla(${hue}, ${sat}%, ${lit}%, ${Math.random() * 0.6 + 0.3})`;
+                    } else if (type < 0.8) {
+                        // Dorados / bronce
+                        const hue = 45 + Math.random() * 20;
+                        const sat = 70 + Math.random() * 25;
+                        const lit = 55 + Math.random() * 30;
+                        colorStyle = `hsla(${hue}, ${sat}%, ${lit}%, ${Math.random() * 0.7 + 0.25})`;
+                    } else {
+                        // tonos negro / grafito con reflejo
+                        const gray = 20 + Math.random() * 50;
+                        colorStyle = `rgba(${gray}, ${gray+15}, ${gray+35}, ${Math.random() * 0.5 + 0.2})`;
+                    }
                     particles.push({
                         x: Math.random() * width,
                         y: Math.random() * height,
-                        radius: Math.random() * 5 + 1.2,
-                        speedX: (Math.random() - 0.5) * 0.28,
-                        speedY: (Math.random() - 0.5) * 0.2 + 0.06,
-                        color: `hsla(${hueBase}, ${sat}%, ${light}%, ${Math.random() * 0.55 + 0.2})`
+                        radius: Math.random() * 7 + 2,
+                        speedX: (Math.random() - 0.5) * 0.2,
+                        speedY: (Math.random() - 0.5) * 0.15 + 0.03,
+                        color: colorStyle,
+                        pulse: Math.random() * Math.PI * 2,
+                        pulseSpeed: 0.02 + Math.random() * 0.03
                     });
                 }
             }
@@ -466,27 +407,48 @@
                 initParticles();
             }
 
+            let time = 0;
             function drawParticles() {
                 if (!ctx) return;
                 ctx.clearRect(0, 0, width, height);
+                time += 0.02;
                 for (let p of particles) {
+                    // Efecto de "titileo" cambiando tamaño y opacidad
+                    const scale = 1 + Math.sin(time * 2 + p.pulse) * 0.2;
+                    const currentRadius = Math.max(1.5, p.radius * scale);
+                    
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.arc(p.x, p.y, currentRadius, 0, Math.PI * 2);
+                    // Sombra brillante para dar sensación de esfera metálica
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = `rgba(212, 175, 55, 0.6)`;
                     ctx.fillStyle = p.color;
-                    ctx.shadowBlur = 7;
-                    ctx.shadowColor = "rgba(70, 150, 210, 0.5)";
                     ctx.fill();
+                    
+                    // Agregar un pequeño brillo interno (destello)
+                    ctx.shadowBlur = 6;
+                    ctx.beginPath();
+                    ctx.arc(p.x - 1, p.y - 1, currentRadius * 0.25, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 230, 150, ${0.3 + Math.sin(time * 3 + p.pulse) * 0.2})`;
+                    ctx.fill();
+                    
                     p.x += p.speedX;
                     p.y += p.speedY;
-
-                    if (p.x < -20) p.x = width + 15;
-                    if (p.x > width + 20) p.x = -20;
-                    if (p.y < -20) p.y = height + 15;
-                    if (p.y > height + 20) p.y = -20;
                     
-                    if (Math.random() < 0.02) {
-                        const newHue = 190 + Math.random() * 55;
-                        p.color = `hsla(${newHue}, 60%, 60%, ${Math.random() * 0.5 + 0.3})`;
+                    if (p.x < -30) p.x = width + 20;
+                    if (p.x > width + 30) p.x = -30;
+                    if (p.y < -30) p.y = height + 20;
+                    if (p.y > height + 30) p.y = -30;
+                    
+                    // Cambio de color sutil en el tiempo
+                    if (Math.random() < 0.005) {
+                        if (Math.random() > 0.6) {
+                            const newHue = 200 + Math.random() * 35;
+                            p.color = `hsla(${newHue}, 65%, 60%, ${Math.random() * 0.6 + 0.3})`;
+                        } else {
+                            const goldHue = 48 + Math.random() * 20;
+                            p.color = `hsla(${goldHue}, 75%, 58%, ${Math.random() * 0.7 + 0.25})`;
+                        }
                     }
                 }
                 requestAnimationFrame(drawParticles);
@@ -496,94 +458,77 @@
             resizeCanvas();
             drawParticles();
 
-            // ---------- CUENTA REGRESIVA: 9 MAYO 2026 - 5:00 PM ----------
-            const eventDate = new Date(2026, 4, 9, 17, 0, 0); // mes 4 = Mayo
-
-            function updateCountdown() {
-                const now = new Date();
-                const diff = eventDate - now;
-                
-                if (diff <= 0) {
-                    document.getElementById('days').innerText = '00';
-                    document.getElementById('hours').innerText = '00';
-                    document.getElementById('minutes').innerText = '00';
-                    document.getElementById('seconds').innerText = '00';
-                    const titleSpan = document.querySelector('.countdown-title');
-                    if (titleSpan) titleSpan.innerHTML = '🎉 ¡HOY ES EL DÍA! 🎉';
-                    return;
+            // Destellos periódicos extra (como estrellas fugaces metálicas)
+            setInterval(() => {
+                if (ctx) {
+                    const flashX = Math.random() * width;
+                    const flashY = Math.random() * height;
+                    ctx.beginPath();
+                    ctx.arc(flashX, flashY, Math.random() * 12 + 4, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(220, 190, 90, ${Math.random() * 0.55})`;
+                    ctx.shadowBlur = 18;
+                    ctx.fill();
+                    setTimeout(() => {}, 40);
                 }
-                
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (86400000)) / (3600000));
-                const minutes = Math.floor((diff % 3600000) / 60000);
-                const seconds = Math.floor((diff % 60000) / 1000);
-                
-                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
-                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
-                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-            }
+            }, 1900);
             
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-            
-            // Efecto de brillo en números del timer
-            const timerNumbers = document.querySelectorAll('.timer-number');
-            function addTimerGlow() {
-                timerNumbers.forEach(el => {
-                    setInterval(() => {
-                        if (Math.random() > 0.75) {
-                            el.style.textShadow = '0 0 12px #f1daa4';
-                            setTimeout(() => { el.style.textShadow = 'none'; }, 240);
-                        }
-                    }, 1200);
-                });
+            // Brillo oscilante en los bordes de la tarjeta (azul/dorado)
+            let shine = 0;
+            function animateMetallicBorders() {
+                const topDeco = document.querySelector('.card-header-decoration');
+                const bottomDeco = document.querySelector('.card-footer-decoration');
+                if (topDeco && bottomDeco) {
+                    shine = (shine + 0.02) % (Math.PI * 2);
+                    const intensity = 0.4 + Math.sin(shine) * 0.25;
+                    const glowColor = `rgba(212, 175, 55, ${intensity})`;
+                    topDeco.style.boxShadow = `0 1px 8px ${glowColor}`;
+                    bottomDeco.style.boxShadow = `0 -1px 8px ${glowColor}`;
+                }
+                requestAnimationFrame(animateMetallicBorders);
             }
-            addTimerGlow();
-
-            // Movimiento Parallax suave para la tarjeta
+            animateMetallicBorders();
+            
+            // Efecto parallax sutil en la tarjeta (movimiento elegante)
             const card = document.querySelector('.invitation-card');
             if (card) {
                 document.body.addEventListener('mousemove', (e) => {
-                    const xAxis = (window.innerWidth / 2 - e.pageX) / 75;
-                    const yAxis = (window.innerHeight / 2 - e.pageY) / 75;
-                    card.style.transform = `translateY(-4px) rotateX(${yAxis * 0.12}deg) rotateY(${xAxis * 0.12}deg)`;
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 80;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 80;
+                    card.style.transform = `translateY(-4px) rotateX(${yAxis * 0.1}deg) rotateY(${xAxis * 0.1}deg)`;
                 });
                 card.addEventListener('mouseleave', () => {
                     card.style.transform = 'translateY(-4px) rotateX(0deg) rotateY(0deg)';
                 });
             }
             
-            // Efecto sutil de cambio en decoraciones
-            let hueShift = 205;
-            function animateBorders() {
-                const topSec = document.querySelector('.card-header-decoration');
-                const bottomSec = document.querySelector('.card-footer-decoration');
-                if (topSec && bottomSec) {
-                    hueShift = (hueShift + 0.6) % 360;
-                    const glowColor = `hsla(${hueShift}, 55%, 60%, 0.4)`;
-                    topSec.style.boxShadow = `0 1px 6px ${glowColor}`;
-                    bottomSec.style.boxShadow = `0 -1px 6px ${glowColor}`;
-                }
-                requestAnimationFrame(animateBorders);
+            // Pequeñas animaciones en elementos decorativos
+            const nameSpan = document.querySelector('.name-manuel');
+            if (nameSpan) {
+                setInterval(() => {
+                    nameSpan.style.letterSpacing = '8px';
+                    setTimeout(() => { nameSpan.style.letterSpacing = '7px'; }, 300);
+                }, 2400);
             }
-            animateBorders();
             
-            // Pequeños destellos ocasionales sobre el canvas para dar dinamismo (al grabar pantalla)
+            const ageElem = document.querySelector('.big-age');
+            if (ageElem) {
+                setInterval(() => {
+                    ageElem.style.textShadow = '0 0 18px rgba(212, 175, 55, 0.7)';
+                    setTimeout(() => { ageElem.style.textShadow = '0 0 15px rgba(212, 175, 55, 0.4)'; }, 400);
+                }, 2200);
+            }
+            
+            // Brillo en los íconos
+            const icons = document.querySelectorAll('.info-icon');
+            let iconIndex = 0;
             setInterval(() => {
-                if (ctx) {
-                    const flashX = Math.random() * width;
-                    const flashY = Math.random() * height;
-                    ctx.beginPath();
-                    ctx.arc(flashX, flashY, Math.random() * 10 + 2, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(180, 210, 245, ${Math.random() * 0.45})`;
-                    ctx.fill();
-                    setTimeout(() => {}, 30);
-                }
-            }, 2300);
+                icons.forEach(icon => {
+                    icon.style.filter = 'drop-shadow(0 0 5px #e6c468)';
+                    setTimeout(() => { icon.style.filter = 'drop-shadow(0 0 2px gold)'; }, 200);
+                });
+            }, 2800);
             
-            // Hacer que el fondo de la tarjeta y sus elementos compartan la misma esencia visual que el body
-            console.log('✨ Invitación con tonos azules uniformes, diseño sobrio y elegante, sin textos extra. Ideal para grabación GIF.');
+            console.log('🎬 Invitación estática animada | Azul metálico, negro y dorado | Esferas titilantes | Ideal para grabar GIF');
         })();
     </script>
 </body>
