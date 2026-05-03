@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Invitación 18 Años | Manuel - Elegancia Atemporal</title>
+    <!-- Fuentes Ultra Elegantes: Playfair Display + Montserrat refinado -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0e1a26;  /* fondo base profundo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+            padding: 30px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Fondo con textura sutil de papel antiguo + ondas azuladas */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" opacity="0.08"><path fill="none" d="M0 0h800v800H0z"/><path fill="%23aaccff" d="M200 300 L250 280 L300 310 L350 290 L400 320 L450 295 L500 315 L550 285 L600 310 L650 290 L700 320 L750 300 L780 330 L790 310 L800 340" stroke="%2389b9e8" stroke-width="1.2" fill="none"/><circle cx="400" cy="500" r="40" stroke="%2372a6d9" stroke-width="0.8" fill="none"/><circle cx="550" cy="180" r="25" stroke="%2389b9e8" stroke-width="0.6" fill="none"/></svg>');
+            background-repeat: repeat;
+            background-size: 280px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Fondo de partículas dinámicas (azul tenue) */
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+
+        /* Tarjeta principal simulando "hoja membretada" elegante con sombra y relieve */
+        .invitation-card {
+            position: relative;
+            z-index: 15;
+            max-width: 820px;
+            width: 100%;
+            background: #FFFEF9;
+            background-image: radial-gradient(circle at 10% 20%, rgba(210, 230, 255, 0.2) 1%, transparent 1.5%);
+            background-size: 28px 28px;
+            border-radius: 32px;
+            box-shadow: 0 40px 65px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(140, 180, 220, 0.5), 0 0 0 8px rgba(30, 55, 80, 0.25);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.5s ease;
+            backdrop-filter: blur(0px);
+        }
+
+        .invitation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 48px 80px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(100, 160, 210, 0.7), 0 0 0 12px rgba(25, 55, 85, 0.3);
+        }
+
+        /* Decoraciones doradas + azul rey */
+        .card-header-decoration {
+            height: 8px;
+            background: linear-gradient(90deg, #b48b3a, #dbb45c, #8b6c32, #dbb45c, #b48b3a);
+            width: 100%;
+        }
+
+        .card-content {
+            padding: 50px 48px 55px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Sello o escudo elegante (detalle) */
+        .card-content::before {
+            content: "✧";
+            font-size: 2.5rem;
+            color: #c9ac6c;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            opacity: 0.5;
+            font-weight: 300;
+            transform: rotate(-15deg);
+        }
+        .card-content::after {
+            content: "✧";
+            font-size: 2.5rem;
+            color: #c9ac6c;
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            opacity: 0.5;
+            transform: rotate(15deg);
+        }
+
+        .invite-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #5f7f9e;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #4f6e8a, #2c4b6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .invite-subtitle::before,
+        .invite-subtitle::after {
+            content: "✦";
+            margin: 0 12px;
+            font-size: 1.3rem;
+            color: #b88b42;
+            animation: gentleSparkle 2.2s infinite;
+        }
+
+        @keyframes gentleSparkle {
+            0% { opacity: 0.5; transform: scale(0.9); text-shadow: 0 0 0px #e7c27d; }
+            100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 8px #e7c27d; }
+        }
+
+        .big-age {
+            font-size: 8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(145deg, #c9a457, #ecd696, #b68b3c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 15px rgba(180, 140, 70, 0.3);
+            margin: 5px 0;
+            line-height: 1;
+            letter-spacing: 8px;
+        }
+
+        .name-manuel {
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(125deg, #2a4b6e, #537a9f, #2c5a82);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: -10px;
+            margin-bottom: 22px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        .name-manuel::after {
+            content: "⚜️";
+            font-size: 1.9rem;
+            position: absolute;
+            right: -52px;
+            top: 10px;
+            color: #c9aa63;
+            animation: floatFleur 3s infinite;
+        }
+
+        @keyframes floatFleur {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(-4px) rotate(8deg); opacity: 1; }
+        }
+
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #3c5b7c;
+            background: rgba(225, 240, 252, 0.65);
+            padding: 14px 26px;
+            border-radius: 70px;
+            margin: 20px 0 25px;
+            border-left: 3px solid #d3af6a;
+            border-right: 3px solid #d3af6a;
+            backdrop-filter: blur(2px);
+            line-height: 1.5;
+        }
+
+        /* Detalles del evento con estilo refinado */
+        .event-details {
+            background: #fbfaf7;
+            border-radius: 48px;
+            padding: 22px 20px;
+            margin: 20px 0 25px;
+            box-shadow: 0 8px 20px rgba(50, 70, 90, 0.08);
+            border: 1px solid #e2eaf1;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            font-size: 1rem;
+        }
+
+        .info-icon {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+            color: #be8f48;
+        }
+
+        .info-text {
+            font-weight: 500;
+            color: #254e6e;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .highlight {
+            background: #e3effa;
+            color: #22638b;
+            font-weight: 700;
+            padding: 5px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .direction-block {
+            background: #eef4fc;
+            border-radius: 28px;
+            padding: 10px 18px;
+            margin-top: 5px;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .countdown-section {
+            margin: 25px 0 20px;
+            background: linear-gradient(125deg, #152f42, #0a2337);
+            border-radius: 60px;
+            padding: 20px 18px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,210,0.1);
+        }
+
+        .countdown-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            color: #e7cf9c;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .timer-block {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            padding: 8px 12px;
+            border-radius: 36px;
+            min-width: 80px;
+            text-align: center;
+            border: 1px solid #cfb07c;
+            transition: all 0.2s;
+        }
+
+        .timer-number {
+            font-size: 2rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', monospace;
+            background: linear-gradient(135deg, #fbe5b9, #f2cf92);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #dbcaa3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .location-ref {
+            margin-top: 20px;
+            background: #f3f6fc;
+            border-radius: 36px;
+            padding: 14px 15px;
+            border: 1px solid #c7deef;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #1b537a;
+        }
+
+        .no-faltes {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #9e773c;
+            margin-top: 30px;
+            letter-spacing: 3px;
+            display: inline-block;
+            border-top: 2px solid #dcb971;
+            padding-top: 20px;
+            animation: textGlow 2s infinite;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 0px #efcd8a; opacity: 0.9;}
+            100% { text-shadow: 0 0 8px #e1b157; opacity: 1;}
+        }
+
+        .card-footer-decoration {
+            height: 5px;
+            background: linear-gradient(90deg, #b48b3a, #e7c180, #b48b3a);
+            width: 100%;
+        }
+
+        @media (max-width: 620px) {
+            .card-content {
+                padding: 35px 24px 40px;
+            }
+            .big-age {
+                font-size: 5rem;
+                letter-spacing: 4px;
+            }
+            .name-manuel {
+                font-size: 2.4rem;
+                letter-spacing: 3px;
+            }
+            .invite-subtitle {
+                font-size: 1rem;
+            }
+            .timer-block {
+                min-width: 65px;
+                padding: 6px 8px;
+            }
+            .timer-number {
+                font-size: 1.5rem;
+            }
+            .quote {
+                font-size: 0.9rem;
+            }
+            .no-faltes {
+                font-size: 1.5rem;
+            }
+            .card-content::before, .card-content::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="invitation-card">
+        <div class="card-header-decoration"></div>
+        <div class="card-content">
+            <div class="invite-subtitle">TE INVITO A CELEBRAR MIS</div>
+            <div class="big-age">18</div>
+            <div class="name-manuel">MANUEL</div>
+
+            <div class="quote">
+                “Cada paso se convierte en luz, cada recuerdo en un latido. Acompáñame a danzar bajo las estrellas.”
+            </div>
+
+            <div class="event-details">
+                <div class="info-row">
+                    <span class="info-icon">📅</span>
+                    <span class="info-text"><strong class="highlight">SÁBADO 9 DE MAYO, 2026</strong></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">⏰</span>
+                    <span class="info-text"><strong>5:00 PM - 11:00 PM</strong> · Celebración desde las 5 de la tarde</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">📍</span>
+                    <span class="info-text"><strong>Av del Parque #263 - Urbanización San Rafael</strong></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-icon">🗺️</span>
+                    <span class="info-text"><strong>Referencia:</strong> Altura del Paradero 5 de la Av Canto Grande</span>
+                </div>
+                <div class="direction-block">
+                    ✦ Calle principal, ingreso iluminado. Estacionamiento privado disponible ✦
+                </div>
+            </div>
+
+            <!-- CUENTA REGRESIVA HASTA EL 9 DE MAYO 2026 - 5PM -->
+            <div class="countdown-section">
+                <div class="countdown-title">✨ CUENTA REGRESIVA PARA LA MAGIA ✨</div>
+                <div class="timer" id="timerContainer">
+                    <div class="timer-block">
+                        <div class="timer-number" id="days">00</div>
+                        <div class="timer-label">Días</div>
+                    </div>
+                    <div class="timer-block">
+                        <div class="timer-number" id="hours">00</div>
+                        <div class="timer-label">Horas</div>
+                    </div>
+                    <div class="timer-block">
+                        <div class="timer-number" id="minutes">00</div>
+                        <div class="timer-label">Minutos</div>
+                    </div>
+                    <div class="timer-block">
+                        <div class="timer-number" id="seconds">00</div>
+                        <div class="timer-label">Segundos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-ref">
+                🎩 Código de vestimenta: Etiqueta semiformal · Noche de gala joven <br>
+                🥂 Confirma tu alegría antes del 2 de mayo al +51 987 654 321
+            </div>
+
+            <div class="no-faltes">
+                ✦ NO FALTES, SERÁ INOLVIDABLE ✦
+            </div>
+        </div>
+        <div class="card-footer-decoration"></div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- FONDO DE PARTÍCULAS ELEGANTE AZUL + DORADO ----------
+            const canvas = document.getElementById('canvas-bg');
+            let ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            const PARTICLE_COUNT = 140;
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                    const isGold = Math.random() > 0.7;
+                    let color;
+                    if (isGold) {
+                        color = `hsla(${45 + Math.random() * 15}, 75%, 60%, ${Math.random() * 0.5 + 0.2})`;
+                    } else {
+                        color = `hsla(${200 + Math.random() * 40}, 60%, 55%, ${Math.random() * 0.5 + 0.2})`;
+                    }
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: Math.random() * 5 + 1.5,
+                        speedX: (Math.random() - 0.5) * 0.3,
+                        speedY: (Math.random() - 0.5) * 0.2 + 0.05,
+                        color: color
+                    });
+                }
+            }
+
+            function resizeCanvas() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+                initParticles();
+            }
+
+            function drawParticles() {
+                if (!ctx) return;
+                ctx.clearRect(0, 0, width, height);
+                for (let p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.shadowBlur = 9;
+                    ctx.shadowColor = "rgba(80, 150, 220, 0.5)";
+                    ctx.fill();
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    if (p.x < -20) p.x = width + 15;
+                    if (p.x > width + 20) p.x = -20;
+                    if (p.y < -20) p.y = height + 15;
+                    if (p.y > height + 20) p.y = -20;
+                    
+                    if (Math.random() < 0.015) {
+                        const newHue = Math.random() > 0.6 ? 45 + Math.random() * 20 : 200 + Math.random() * 40;
+                        p.color = `hsla(${newHue}, 65%, 60%, ${Math.random() * 0.6 + 0.3})`;
+                    }
+                }
+                requestAnimationFrame(drawParticles);
+            }
+
+            window.addEventListener('resize', () => { resizeCanvas(); });
+            resizeCanvas();
+            drawParticles();
+
+            // ---------- CUENTA REGRESIVA: 9 DE MAYO 2026 - 5:00 PM ----------
+            const eventDate = new Date(2026, 4, 9, 17, 0, 0); // Mayo = mes 4
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = eventDate - now;
+                
+                if (diff <= 0) {
+                    document.getElementById('days').innerText = '00';
+                    document.getElementById('hours').innerText = '00';
+                    document.getElementById('minutes').innerText = '00';
+                    document.getElementById('seconds').innerText = '00';
+                    const titleEl = document.querySelector('.countdown-title');
+                    if (titleEl) titleEl.innerHTML = '🎉 ¡HOY ES EL GRAN DÍA! 🎉';
+                    return;
+                }
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (86400000)) / (3600000));
+                const minutes = Math.floor((diff % 3600000) / 60000);
+                const seconds = Math.floor((diff % 60000) / 1000);
+                
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Efecto de brillo en números del temporizador
+            const timerSpans = document.querySelectorAll('.timer-number');
+            function sparkleTimer() {
+                timerSpans.forEach(el => {
+                    setInterval(() => {
+                        if (Math.random() > 0.8) {
+                            el.style.textShadow = '0 0 10px #f5d98f';
+                            setTimeout(() => { el.style.textShadow = 'none'; }, 220);
+                        }
+                    }, 1100);
+                });
+            }
+            sparkleTimer();
+
+            // Movimiento parallax elegante en la tarjeta
+            const card = document.querySelector('.invitation-card');
+            if (card) {
+                document.body.addEventListener('mousemove', (e) => {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 70;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 70;
+                    card.style.transform = `translateY(-6px) rotateX(${yAxis * 0.15}deg) rotateY(${xAxis * 0.15}deg)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(-6px) rotateX(0deg) rotateY(0deg)';
+                });
+            }
+            
+            // Efecto azul/dorado en bordes decorativos
+            let shift = 195;
+            function animateBorderGlow() {
+                const topDeco = document.querySelector('.card-header-decoration');
+                const bottomDeco = document.querySelector('.card-footer-decoration');
+                if (topDeco && bottomDeco) {
+                    shift = (shift + 0.7) % 360;
+                    const glowColor = `hsla(${shift}, 65%, 55%, 0.5)`;
+                    topDeco.style.boxShadow = `0 2px 8px ${glowColor}`;
+                    bottomDeco.style.boxShadow = `0 -2px 8px ${glowColor}`;
+                }
+                requestAnimationFrame(animateBorderGlow);
+            }
+            animateBorderGlow();
+            
+            // pequeños destellos en el fondo cada cierto tiempo para hacer más visual la grabación
+            setInterval(() => {
+                if (ctx) {
+                    ctx.shadowBlur = 12;
+                    const glintX = Math.random() * width;
+                    const glintY = Math.random() * height;
+                    ctx.beginPath();
+                    ctx.arc(glintX, glintY, Math.random() * 12 + 3, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(210, 185, 110, ${Math.random() * 0.5})`;
+                    ctx.fill();
+                    setTimeout(() => {}, 50);
+                }
+            }, 2100);
+            
+            console.log('🎬 Invitación Manuel: Dirección actualizada, diseño tipo hoja membretada — perfecta para grabar GIF.');
+        })();
+    </script>
+</body>
+</html>
